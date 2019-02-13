@@ -62,6 +62,8 @@ while True:
 
 # -- DÖNERBUDE --
 
+        # -- Dönerbude darf sich nur in einem der inneren Felder befinden
+
         doenerbude = spielfelder.index("[-    Dönerbude     -]")
         innere_felder = ["6","7","8","11","12","13"]
 
@@ -71,10 +73,11 @@ while True:
         else:
 
             while True:
-
-                r = random.choice(spielfelder)
+                
+                # -- Innenfeld wird ermittelt
+                r = random.choice(spielfelder)                      # r wird ein zufälliges Feld zugewiesen
                 if str(spielfelder.index(r)) in innere_felder:
-                    spielfelder[spielfelder.index(r)], spielfelder[doenerbude] = spielfelder[doenerbude], spielfelder[spielfelder.index(r)]
+                    spielfelder[spielfelder.index(r)], spielfelder[doenerbude] = spielfelder[doenerbude], spielfelder[spielfelder.index(r)]     # zufälliges Innenfeld mit Dönerbude getauscht
                     break
                 else:
                     continue
@@ -162,9 +165,12 @@ while True:
         spielernamen = []
         
         anzahl_spieler = input("\nWieviele Spieler? ")
+        print()
+
         count = 1
 
         while count <= int(anzahl_spieler):
+
             name = input("Wer ist der " + str(count) + ". Spieler?  ")
             spielernamen.append(name)
             count += 1
