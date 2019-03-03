@@ -1,10 +1,10 @@
 """ 
 
-Programm zum Brettspiel Istanbul
+Programm zum Brettspiel Istanbul mit Erweiterung "Mokka und Bakschisch"
 
 	Funktionen: 
 		- erstellt einen zufälligen Spielplan für das Grundspiel mit der Erweiterung "Mokka und Bakschisch" gemäß Regeln
-		- es wird berücksichtigt, dass sich das Teestubenfeld in der Mitte des Spielplans befindet
+		- es wird berücksichtigt, dass sich die Dönerbude in der Mitte des Spielplans befindet
 		- es wird berücksichtigt, dass die Teestube und Schwarzmarkt sich nicht auf der selben Linie befinden und mind. 3 Felder Abstand sind
 		- Auswahl eines Startspielers
 		- Auswahl eines zufälligen Feldes für Schmuggler, Kaffeehändler und Gouverneur
@@ -24,9 +24,10 @@ while True:
 
 # -- SPIELFELDER --
 
-    spielfelder = ["[-     Wagnerei     -]", "[-    Tuchlager     -]", "[-   Gewürzlager    -]", "[-    Obstlager     -]", "[-     Postamt      -]",  "[-   Karawanserei   -]",  "[-    Dönerbude     -]",  "[-   Schwarzmarkt   -]",  
-                "[-     Teestube     -]", "[-  Kleiner Markt   -]", "[-   Großer Markt   -]", "[-   Polizeiwache   -]", "[-  Sultanspalast   -]", "[-  Kleine Moschee  -]", "[-  Große Moschee   -]","[- Edelsteinhändler -]","[-  Kaffeerösterei  -]", 
-                "[-   Gildenhalle    -]", "[-     Taverne      -]", "[-    Kaffeehaus    -]"]
+    spielfelder = ["[-     Wagnerei     -]", "[-    Tuchlager     -]", "[-   Gewürzlager    -]", "[-    Obstlager     -]", "[-     Postamt      -]",  
+		   "[-   Karawanserei   -]",  "[-    Dönerbude     -]",  "[-   Schwarzmarkt   -]", "[-     Teestube     -]", "[-  Kleiner Markt   -]", 
+		   "[-   Großer Markt   -]", "[-   Polizeiwache   -]", "[-  Sultanspalast   -]", "[-  Kleine Moschee  -]", "[-  Große Moschee   -]",
+		   "[- Edelsteinhändler -]","[-  Kaffeerösterei  -]", "[-   Gildenhalle    -]", "[-     Taverne      -]", "[-    Kaffeehaus    -]"]
 
     user_input = input()
 
