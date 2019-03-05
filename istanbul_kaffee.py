@@ -146,7 +146,7 @@ def mokka():
 				print_spielfeld()
 				print("\n",("\t")*5,"-- Schmuggler auf       ", spielfelder[random.randint(0,19)])                
 				print("\n",("\t")*5,"-- Gouverneur auf       ", spielfelder[random.randint(0,19)])                
-				print("\n",("\t")*5,"-- Kaffehändler auf     ", spielfelder[random.randint(0,19)],("\n" * 3))                
+				print("\n",("\t")*5,"-- Kaffeehändler auf     ", spielfelder[random.randint(0,19)],("\n" * 3))                
 
 
 
