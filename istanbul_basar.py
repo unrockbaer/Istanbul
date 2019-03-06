@@ -15,6 +15,7 @@ def basar():
 
         import random, sys, os
 
+	os.system("clear")
         print("\n\n\t --- Istanbul ---")
         print("\n\n\t 1 Spielaufbau") 
 
