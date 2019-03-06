@@ -14,8 +14,7 @@ Programm zum Brettspiel Istanbul für    - Der große Basar -         Grundspiel
 def basar():
 
         import random, sys, os
-
-	os.system("clear")
+        os.system("clear")
         print("\n\n\t --- Istanbul ---")
         print("\n\n\t 1 Spielaufbau") 
 
