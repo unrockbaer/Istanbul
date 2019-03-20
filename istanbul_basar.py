@@ -80,60 +80,54 @@ def basar():
                 sm_index = spielfelder.index("[-   Schwarzmarkt   -]")
                 ts_index = spielfelder.index("[-     Teestube     -]")
 
-                def schwarzmarkt_teestube(sm_feld,rote_zone=[]):   # - rote_zone sind Felder, auf der Teestube nicht sein darf
+                # Dictionary für { Schwarzmarktfeld : (rote Zone) }
+                roteZone = { 0 : [0,1,2,3,4,5,6,10,15,20],
+                             1 : [0,1,2,3,4,5,6,7,11,16,21], 
+                             2 : [0,1,2,3,4,8,6,7,12,17,22], 
+                             3 : [0,1,2,3,4,7,8,9,13,18,23], 
+                             4 : [0,1,2,3,4,8,9,14,19,24,24], 
+                             5 : [0,1,5,6,7,8,9,10,11,15,20], 
+                             6 : [0,1,2,5,6,7,8,9,10,11,12,16,21], 
+                             7 : [1,2,3,5,6,7,8,9,11,12,13,17,22], 
+                             8 : [1,2,3,5,6,7,8,9,12,13,14,18,23], 
+                             9 : [3,4,5,6,7,8,9,13,14,19,24], 
+                             10 : [0,5,6,10,11,12,13,14,15,16,20,21], 
+                             11 : [1,5,6,7,10,11,12,13,14,15,16,17,21], 
+                             12 : [2,6,7,8,10,11,12,13,14,16,17,18,22], 
+                             13 : [3,7,8,9,10,11,12,13,14,17,18,19,23], 
+                             14 : [4,8,9,10,11,12,13,14,18,19,24], 
+                             15 : [0,5,10,11,15,16,17,18,19,20,21],
+                             16 : [1,6,10,11,12,15,16,17,18,19,20,21,22],
+                             17 : [2,7,11,12,13,15,16,17,18,19,21,22,23],
+                             18 : [3,8,12,13,14,15,16,17,18,19,22,23,24],
+                             19 : [4,9,13,14,15,16,17,18,19,23,24],
+                             20 : [0,5,10,15,16,20,21,22,23,24],
+                             21 : [1,6,11,15,16,17,20,21,22,23,24],
+                             22 : [2,7,12,16,17,18,20,21,22,23,24],
+                             23 : [3,8,13,17,18,19,20,21,22,23,24],
+                             24 : [4,9,14,18,19,20,21,22,23,24],
+                            } 
 
-                    if str(sm_index) == sm_feld:
-                        if str(ts_index) in rote_zone:
-                            
-                            while True:
-                                
-                            # - neu gewähltes Spielfeld, das nicht in der roten Zone ist, wird gesucht
-                                tsNeuIndex = random.choice(spielfelder)
+                
+                
+                while True:
+                    
+                # - neu gewähltes Spielfeld, das nicht in der roten Zone ist, wird gesucht
+                    tsNeuIndex = random.choice(spielfelder)
 
-                            # - wenn tsNeuIndex in der roten Zone liegt oder Dönerbude ist - continue
-                                if str(spielfelder.index(tsNeuIndex)) in rote_zone:
-                                    continue
-                                elif tsNeuIndex == "[-    Dönerbude     -]":
-                                    continue
+                # - wenn tsNeuIndex in der roten Zone liegt oder Dönerbude ist - continue
+                    if int(spielfelder.index(tsNeuIndex)) in roteZone[sm_index]:
+                        continue
 
-                                else:
-                                    break
+                    elif tsNeuIndex == "[-    Dönerbude     -]":
+                        continue
 
-                            # - gewähltes Spielfeld mit Teestube tauschen
-                            spielfelder[spielfelder.index(tsNeuIndex)], spielfelder[ts_index] = spielfelder[ts_index], spielfelder[spielfelder.index(tsNeuIndex)]
-
-                        else:
-                            pass
                     else:
-                        pass
+                        break
 
-                # Prüfung für jedes Feld, ob Index von Schwarzmarkt und wenn ja, ob Teestube in roter_zone
+                # - gewähltes Spielfeld mit Teestube tauschen
+                spielfelder[spielfelder.index(tsNeuIndex)], spielfelder[ts_index] = spielfelder[ts_index], spielfelder[spielfelder.index(tsNeuIndex)]
 
-                schwarzmarkt_teestube("0", ["0","1","2","3","4","5","6","10","15","20"]) 
-                schwarzmarkt_teestube("1", ["0","1","2","3","4","5","6","7","11","16","21"]) 
-                schwarzmarkt_teestube("2", ["0","1","2","3","4","8","6","7","12","17","22"]) 
-                schwarzmarkt_teestube("3", ["0","1","2","3","4","7","8","9","13","18","23"]) 
-                schwarzmarkt_teestube("4", ["0","1","2","3","4","8","9","14","19","24","24"]) 
-                schwarzmarkt_teestube("5", ["0","1","5","6","7","8","9","10","11","15","20"]) 
-                schwarzmarkt_teestube("6", ["0","1","2","5","6","7","8","9","10","11","12","16","21"]) 
-                schwarzmarkt_teestube("7", ["1","2","3","5","6","7","8","9","11","12","13","17","22"]) 
-                schwarzmarkt_teestube("8", ["1","2","3","5","6","7","8","9","12","13","14","18","23"]) 
-                schwarzmarkt_teestube("9", ["3","4","5","6","7","8","9","13","14","19","24"]) 
-                schwarzmarkt_teestube("10", ["0","5","6","10","11","12","13","14","15","16","20","21"]) 
-                schwarzmarkt_teestube("11", ["1","5","6","7","10","11","12","13","14","15","16","17","21"]) 
-                schwarzmarkt_teestube("12", ["2","6","7","8","10","11","12","13","14","16","17","18","22"]) 
-                schwarzmarkt_teestube("13", ["3","7","8","9","10","11","12","13","14","17","18","19","23"]) 
-                schwarzmarkt_teestube("14", ["4","8","9","10","11","12","13","14","18","19","24"]) 
-                schwarzmarkt_teestube("15", ["0","5","10","11","15","16","17","18","19","20","21"])
-                schwarzmarkt_teestube("16", ["1","6","10","11","12","15","16","17","18","19","20","21","22"])
-                schwarzmarkt_teestube("17", ["2","7","11","12","13","15","16","17","18","19","21","22","23"])
-                schwarzmarkt_teestube("18", ["3","8","12","13","14","15","16","17","18","19","22","23","24"])
-                schwarzmarkt_teestube("19", ["4","9","13","14","15","16","17","18","19","23","24"])
-                schwarzmarkt_teestube("20", ["0","5","10","15","16","20","21","22","23","24"])
-                schwarzmarkt_teestube("21", ["1","6","11","15","16","17","20","21","22","23","24"])
-                schwarzmarkt_teestube("22", ["2","7","12","16","17","18","20","21","22","23","24"])
-                schwarzmarkt_teestube("23", ["3","8","13","17","18","19","20","21","22","23","24"])
-                schwarzmarkt_teestube("24", ["4","9","14","18","19","20","21","22","23","24"])
 
 
         # -- ENDAUSGABE SPIELFELD --
