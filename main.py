@@ -1,3 +1,9 @@
+#! /usr/bin/python3.7
+
+""" Istanbul Brettspiel Begleitprogramm """
+
+""" Dieses Programm erstellt einen Spielaufbau für Istanbul und erwürfelt neue Spielfelder. """
+
 import sys
 
 print("\n\n\t --- Istanbul ---")
