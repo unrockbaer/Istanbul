@@ -4,7 +4,9 @@
 
 """ Dieses Programm erstellt einen Spielaufbau für Istanbul und erwürfelt neue Spielfelder. """
 
-import sys
+import sys, os
+
+os.system("clear")
 
 print("\n\n\t --- Istanbul ---")
 print("\n\n\t 1 Grundspiel")
